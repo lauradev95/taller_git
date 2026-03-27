@@ -95,4 +95,22 @@ public class GestorTareas {
         }
         return null; // No encontrada
     }
+
+    public void listarPendientes() {
+        System.out.println("\n === TAREAS PENDIENTES ===");
+        for (Tarea tarea : tareas) {
+            if (!tarea.isCompletada()) {
+                System.out.println(tarea);
+            }
+        }
+    }
+
+    public void listarCompletadas() {
+        System.out.println("\n === TAREAS COMPLETADAS ===");
+        for (Tarea tarea : tareas) {
+            if (tarea.isCompletada()) {
+                System.out.println(tarea);
+            }
+        }
+    }
 }
