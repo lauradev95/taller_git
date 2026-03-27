@@ -7,8 +7,8 @@ import java.util.Scanner;
  * Menú interactivo por consola.
  *
  * TODO (conflicto intencionado): ambos miembros de la pareja deberán
- *      modificar el método mostrarMenu() en sus ramas, lo que generará
- *      un conflicto de merge en el Bloque 3 del taller.
+ * modificar el método mostrarMenu() en sus ramas, lo que generará
+ * un conflicto de merge en el Bloque 3 del taller.
  */
 public final class App {
     private App() {
@@ -40,7 +40,13 @@ public final class App {
                     String titulo = scanner.nextLine();
                     System.out.print("Descripción: ");
                     String descripcion = scanner.nextLine();
-                    gestor.añadirTarea(titulo, descripcion);
+                    System.out.println("Prioridad (1: ALTA, 2: MEDIA, 3: BAJA): ");
+                    int opcionPrioridad = scanner.nextInt();
+                    Tarea.Prioridad p = (opcionPrioridad == 1) ? Tarea.Prioridad.ALTA
+                            : (opcion == 2) ? Tarea.Prioridad.MEDIA : Tarea.Prioridad.BAJA;
+
+                    gestor.añadirTarea(titulo, descripcion, p);
+
                     break;
 
                 case 2:
@@ -94,10 +100,10 @@ public final class App {
      */
     private static void mostrarMenu() {
         System.out.println("\n=== OPCIONES DISPONIBLES ===");
-        System.out.println("1. Nueva tarea");
-        System.out.println("2. Listar tareas");
-        System.out.println("3. Completar tarea");
-        System.out.println("4. Eliminar tarea");
-        System.out.println("0. Salir");
+        System.out.println("1. 📝 Nueva tarea");
+        System.out.println("2. 📋 Listar tareas");
+        System.out.println("3. ✅ Completar tarea");
+        System.out.println("4. 🗑️ Eliminar tarea");
+        System.out.println("0. 🚪 Salir");
     }
 }
