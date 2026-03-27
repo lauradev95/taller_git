@@ -81,6 +81,10 @@ public final class App {
                     gestor.listarCompletadas();
                     break;
 
+                case 7:
+                    System.out.println("Guardar tareas en archivo");
+                    gestor.guardarEnFichero();
+
                 case 0:
                     System.out.println("¡Hasta luego!");
                     break;
@@ -104,6 +108,9 @@ public final class App {
         System.out.println("2. 📋 Listar tareas");
         System.out.println("3. ✅ Completar tarea");
         System.out.println("4. 🗑️ Eliminar tarea");
+        System.out.println("5. 📌 Listar pendientes");
+        System.out.println("6. 📌 Listar completadas");
+        System.out.println("7. 💾 Guardar en archivo");
         System.out.println("0. 🚪 Salir");
     }
 }
