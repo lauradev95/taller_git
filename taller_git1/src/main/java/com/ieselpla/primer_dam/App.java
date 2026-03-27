@@ -43,7 +43,7 @@ public final class App {
                     System.out.println("Prioridad (1: ALTA, 2: MEDIA, 3: BAJA): ");
                     int opcionPrioridad = scanner.nextInt();
                     Tarea.Prioridad p = (opcionPrioridad == 1) ? Tarea.Prioridad.ALTA
-                            : (opcion == 2) ? Tarea.Prioridad.MEDIA : Tarea.Prioridad.BAJA;
+                            : (opcionPrioridad == 2) ? Tarea.Prioridad.MEDIA : Tarea.Prioridad.BAJA;
 
                     gestor.añadirTarea(titulo, descripcion, p);
 
