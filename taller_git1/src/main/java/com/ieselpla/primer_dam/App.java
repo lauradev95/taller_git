@@ -67,6 +67,14 @@ public final class App {
                     }
                     break;
 
+                case 5:
+                    gestor.listarPendientes();
+                    break;
+
+                case 6:
+                    gestor.listarCompletadas();
+                    break;
+
                 case 0:
                     System.out.println("¡Hasta luego!");
                     break;
