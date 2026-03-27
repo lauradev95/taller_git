@@ -40,8 +40,14 @@ public final class App {
                     String titulo = scanner.nextLine();
                     System.out.print("Descripción: ");
                     String descripcion = scanner.nextLine();
-                    gestor.añadirTarea(titulo, descripcion);
+                    System.out.println("Prioridad (1: ALTA, 2: MEDIA, 3: BAJA): ");
+                    int opcionPrioridad = scanner.nextInt();
+                    Tarea.Prioridad p = (opcionPrioridad == 1) ? Tarea.Prioridad.ALTA : (opcion == 2) ? Tarea.Prioridad.MEDIA : Tarea.Prioridad.BAJA;
+
+                    gestor.añadirTarea(titulo, descripcion,p);
+                    
                     break;
+                    
 
                 case 2:
                     gestor.listarTareas();
