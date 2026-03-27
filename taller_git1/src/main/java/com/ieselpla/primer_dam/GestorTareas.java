@@ -1,5 +1,8 @@
 package com.ieselpla.primer_dam;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import com.ieselpla.primer_dam.Tarea.Prioridad;
@@ -113,4 +116,16 @@ public class GestorTareas {
             }
         }
     }
+
+    public void guardarEnFichero() {
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter("tareas.txt"))) {
+        for (Tarea tarea : tareas) {
+            bw.write(tarea.toString());
+            bw.newLine();
+        }
+        System.out.println("Tareas guardadas en tareas.txt");
+    } catch (IOException e) {
+        System.out.println("Error al guardar: " + e.getMessage());
+    }
+}
 }
